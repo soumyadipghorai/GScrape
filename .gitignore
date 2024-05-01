@@ -8,7 +8,8 @@ __pycache__/
 *$py.class
 
 task.txt
-tests/example.md
+tests/*.md
+tests/*.txt
 
 # C extensions
 *.so

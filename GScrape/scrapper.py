@@ -3,6 +3,7 @@ from bs4 import BeautifulSoup
 from bs4.element import NavigableString, Comment, ProcessingInstruction, Script, Stylesheet
 import pandas as pd 
 from collections import deque
+import uuid
 
 class Scrapper :
     """
@@ -46,6 +47,9 @@ class Scrapper :
         self.site_page_soup = BeautifulSoup(
             self.site_page_htmlcontent, 'lxml'
         )
+
+    def generate_file_name(self) : 
+        return uuid.uuid4() 
 
     def create_markdown(self) -> str: 
         """
@@ -102,11 +106,45 @@ class Scrapper :
             flag = True
 
         if self.save_file :
-            with open('example.md', 'w', encoding='utf-8') as file:
+            with open(str(self.generate_file_name())+'.md', 'w', encoding='utf-8') as file:
                 file.write(output)
 
         return output
     
+    def create_text(self) : 
+        site_body, tree_stack = self.site_page_soup.find('body'), deque()
+        output, flag = "", True
+
+        tree_stack.append(site_body)
+        while tree_stack : 
+            node = tree_stack.pop()
+
+            if node.name in ['h1', 'h2', 'h3', 'h4', 'h5', 'h6', 'p', 'span', 'li'] : 
+                output += "\n" + node.text.strip() + '\n'
+
+            elif node.name == 'table' :  
+                extracted_table = pd.read_html(str(node))[0]
+                output += '\n'+extracted_table.to_markdown() +'\n'
+                flag = False
+
+            try :
+                to_insert = []
+                for child in node.children : 
+                    if type(child) not in [NavigableString, Comment, ProcessingInstruction, Script, Stylesheet] and flag :
+                        to_insert.append(child)
+                
+                to_insert = reversed(list(to_insert))
+                tree_stack.extend(to_insert)
+            except : 
+                print("error occured --> ", node, type(node)) 
+            flag = True
+
+        if self.save_file :
+            with open(str(self.generate_file_name())+'.txt', 'w', encoding='utf-8') as file:
+                file.write(output)
+
+        return output
+
     def chat(self, api_key: str, query: str = "Give me a brief summary of the following text") -> str: 
         """
         Generates a response using the Hugging Face API based on a given query and text.
