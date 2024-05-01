@@ -7,7 +7,8 @@ __pycache__/
 *.py[cod]
 *$py.class
 
-task
+task.txt
+tests/example.md
 
 # C extensions
 *.so
