@@ -1,0 +1,5 @@
+add feature to extract specific info --> h/p/table/li/a 
+add feature to scrape the links as well 
+add feature to set max neighbor depth 
+add documentation 
+add error handling 
