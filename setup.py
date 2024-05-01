@@ -21,7 +21,7 @@ setup(
     long_description_content_type="text/markdown",
     long_description=long_description,
     packages=find_packages(),
-    install_requires=['bs4', 'requests', 'pandas'],
+    install_requires=['bs4', 'requests', 'pandas', 'lxml', 'tabulate'],
     keywords=['python', 'bs4', 'beautiful soup', 'scapper', 'web scrape', 'llm'],
     classifiers=[
         "Development Status :: 1 - Planning",

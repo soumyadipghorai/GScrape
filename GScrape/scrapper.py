@@ -69,12 +69,10 @@ class Scrapper :
         - This method assumes that the HTML content is well-formed.
         - If the `save_file` attribute is True, the generated Markdown content will be saved to a file named 'example.md'.
         """
-        site_body = self.site_page_soup.find('body') 
-        tree_stack = deque()
+        site_body, tree_stack = self.site_page_soup.find('body'), deque()
+        output, flag = "", True
+        
         tree_stack.append(site_body)
-        output = ""
-        flag = True
-    
         while tree_stack : 
             node = tree_stack.pop() 
             if node.name in ['h1', 'h2', 'h3', 'h4', 'h5', 'h6'] : 
