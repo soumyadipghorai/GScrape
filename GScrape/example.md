@@ -1,61 +1,37 @@
-`Start 14 Days Free Trial` Subscribe Now! Get features like
+- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - `✕` 
+# West Bengal sees microfinance as a key driver of economic growth: Mitra
 
-`Ad lite` `HT Premium Articles` `Quickreads Segment` `HT E-paper` - - - - - - - - - - - - - - `404` The page you are looking for does not exist.
+## Speaking at a precursor meeting of the Bengal Global Business Summit (BGBS) 2023, Mitra said that banks in West Bengal lent Rs 1.28 trillion to the MSMEs in FY23
+Illustration: Ajay Mohanty
 
-Go to homepage and explore more
+`Shiva Rajora New Delhi` `Shiva Rajora` `New Delhi` 
+#### Listen to This Article
 
-`OR` Checkout latest news around the globe
+### Also Read
 
-`[` 
-# Latest News
-`]` 
-## Viral: Pro-Israel protester chants ‘Jai Shri Ram’ slogan at US university
+## Manipur is sensitive matter, politics on it is shameful, says Amit Shah
 
-## Anti-Palestine demonstrator responds to alleged anti-India remarks with “Jai Shri Ram” cries.
-`By` 
-### Godrej family amicably splits company; Adi, brother to keep five listed firms
+## Net zero target: How MSMEs are caught between a rock and a hard place
 
-## Adi Godrej and his brother Nadir will keep the five listed companies of Godrej Group, while cousins will get the unlisted firms.
+## Will decide who will be Madhya Pradesh CM after poll result, says Amit Shah
 
-### Indus Towers Q4 results: Net profit jumps 32% to ₹1,853 cr
-`₹` 
-## Indus Towers Q4 results: The company has declared its quarterly results today.
-`By` 
-### All-round Stoinis helps Lucknow beat Mumbai in IPL
+## '2 million new jobs to be created under PM MITRA', says Piyush Goyal
 
-## All-round Stoinis helps Lucknow beat Mumbai in IPL
+## PM Mitra parks to boost India's $100 bn textile export goal, says industry
 
-### Marcus Stoinis steers KL Rahul's LSG to win as MI flop again in IPL 2024
+## Global uncertainty, domestic disruption to keep inflation elevated: FinMin
 
-## The all-rounder top-scored with 62 to help reel in MI’s modest total of 144 and complete a four-wicket win in Lucknow.
-`By` `, Lucknow` 
-### Virgo Monthly Horoscope for May 2024 predicts career advancements
+## BS Policy & Politics: Food-driven retail inflation may cool only in Sept
 
-## Read Virgo monthly horoscope for May 2024, to know your astrological predictions. Financially, May is a month of positive movement.
-`By` 
-### 2 Indian spies expelled from Australia for trying to ‘steal secrets’: Media
+## Crude oil refining output rose 2.2% to 21.9 MMT in July: Oil Ministry
 
-## Australia expelled two Indian spies in 2020 for allegedly trying to "steal secrets" about sensitive defence projects and airport security, the local media said.
+## Govt losing revenue due to GST, should be neutral with single rate: Debroy
 
-### Leo Monthly Horoscope Today, May 2024 predicts prominent career growth
+## ICRA estimates GDP growth at 8.5% in Q1, maintains FY24 forecast at 6%
+`Topics : MSMEs Amit Mitra` `MSMEs` `Amit Mitra` Don't miss the most important news and views of the day. Get them on our   Telegram channel
 
-## Read Leo monthly horoscope for May 2024, to know your astrological predictions. May brings a blend of opportunities and hurdles for Leos.
-`By` 
-### Cancer Monthly Horoscope for May 2024 predicts an unexpected love affair
-
-## Read Cancer monthly horoscope for May 2024 to know your daily astrological predictions. May promises a month of significant transformations for Cancer.
-`By` 
-### Gemini Monthly Horoscope for May 2024 predicts progress in your career
-
-## Read Gemini monthly horoscope for May 2024, to know your astrological predictions. A significant leap in your career awaits this May, Gemini.
-`By` 
-### Join Hindustan Times
-
-## Create free account and unlock exciting features like
-`Newsletters, Alerts and Recommendations
-Get personalised news and exciting deals
-Bookmark the stories you want to read later` `Newsletters, Alerts and Recommendations` `Get personalised news and exciting deals` `Bookmark the stories you want to read later` - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - `Click to Top` `Live Score` `Start 14 Days Free Trial` 
+First Published: Aug 22 2023 | 7:46 PM IST
 
 
-
-`Start 14 Days Free Trial` - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - 
+### Explore News
+`HOT STOCKS` - `TOP SECTIONS` - - `KEY EVENTS` - `Copyrights © 2024 Business Standard Private Ltd. All rights reserved` 

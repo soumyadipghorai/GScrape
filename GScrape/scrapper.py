@@ -1,11 +1,7 @@
-import json
 import requests
 from bs4 import BeautifulSoup
 from bs4.element import NavigableString, Comment, ProcessingInstruction, Script, Stylesheet
-import pandas as pd
-import numpy as np
-import random
-from tqdm import tqdm
+import pandas as pd 
 from collections import deque
 
 class Scrapper :
@@ -71,10 +67,20 @@ class Scrapper :
             with open('example.md', 'w', encoding='utf-8') as file:
                 file.write(output)
 
-
         return output
+    
+    def chat(self, api_key: str, query: str = "Give me a brief summary of the following text") : 
+        API_URL = "https://api-inference.huggingface.co/models/mistralai/Mistral-7B-Instruct-v0.2"
+        headers = {"Authorization": f"Bearer {api_key}"}
 
-# obj = Scrapper('https://soumyadipghorai.github.io/Portfolio_Old/')
-obj = Scrapper('https://www.hindustantimes.com/photos/sports/lsg-vs-mi-ipl-2024-catch-all-the-action-in-images-101714500664251-4.html')
-obj.create_markdown()
-# print('final output --> ', obj.create_markdown()) 
+        text = self.create_markdown()
+
+        def query(payload):
+            response = requests.post(API_URL, headers=headers, json=payload)
+            return response.json()
+            
+        output = query({
+            "inputs": f"{query} {text} ",
+        })
+    
+        print(output[0]['generated_text'])
