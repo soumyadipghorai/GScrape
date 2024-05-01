@@ -5,7 +5,26 @@ import pandas as pd
 from collections import deque
 
 class Scrapper :
-    def __init__(self, site_url: str, output_type: str = 'markdown', save_file : bool = True) : 
+    """
+    A class for web scraping.
+
+    Attributes:
+        site_url (str): The URL of the website to scrape.
+        output_type (str, optional): The type of output format. Default is 'markdown'.
+        save_file (bool, optional): Whether to save the scraped content to a file. Default is True.
+
+    Methods:
+        __init__: Initializes the Scrapper object and fetches the webpage content.
+    """
+    def __init__(self, site_url: str, output_type: str = 'markdown', save_file : bool = True) -> None: 
+        """
+        Initializes a Scrapper object.
+
+        Args:
+            site_url (str): The URL of the website to scrape.
+            output_type (str, optional): The type of output format. Default is 'markdown'.
+            save_file (bool, optional): Whether to save the scraped content to a file. Default is True.
+        """
         self.site_url = site_url 
         self.output_type = output_type 
         self.save_file = save_file
@@ -28,7 +47,28 @@ class Scrapper :
             self.site_page_htmlcontent, 'lxml'
         )
 
-    def create_markdown(self) : 
+    def create_markdown(self) -> str: 
+        """
+        Extracts content from the website's HTML body and converts it to Markdown format.
+
+        Returns:
+            str: Markdown-formatted string containing the extracted content.
+
+        This method traverses the HTML tree starting from the website's body tag,
+        extracting content such as headings, paragraphs, spans, lists, and tables.
+        It then converts the extracted content to Markdown format.
+
+        Supported HTML tags:
+        - Headings (h1 to h6): Converted to corresponding Markdown headings.
+        - Paragraphs (p): Converted to Markdown paragraphs.
+        - Spans (span): Converted to inline code blocks in Markdown.
+        - Lists (li): Converted to Markdown list items.
+        - Tables (table): Converted to Markdown tables using Pandas' to_markdown() function.
+
+        Note:
+        - This method assumes that the HTML content is well-formed.
+        - If the `save_file` attribute is True, the generated Markdown content will be saved to a file named 'example.md'.
+        """
         site_body = self.site_page_soup.find('body') 
         tree_stack = deque()
         tree_stack.append(site_body)
@@ -69,7 +109,17 @@ class Scrapper :
 
         return output
     
-    def chat(self, api_key: str, query: str = "Give me a brief summary of the following text") : 
+    def chat(self, api_key: str, query: str = "Give me a brief summary of the following text") -> str: 
+        """
+        Generates a response using the Hugging Face API based on a given query and text.
+
+        Args:
+            api_key (str): The Hugging Face API key required for authentication.
+            query (str, optional): The query to be used in the generation process. Defaults to "Give me a brief summary of the following text".
+
+        Returns:
+            str: The generated response.
+        """
         API_URL = "https://api-inference.huggingface.co/models/mistralai/Mistral-7B-Instruct-v0.2"
         headers = {"Authorization": f"Bearer {api_key}"}
 
@@ -83,4 +133,4 @@ class Scrapper :
             "inputs": f"{query} {text} ",
         })
     
-        print(output[0]['generated_text'])
+        return output[0]['generated_text']
