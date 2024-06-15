@@ -1,1 +1,0 @@
-from gscrape.scrapper import Scrapper
