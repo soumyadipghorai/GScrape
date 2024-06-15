@@ -7,17 +7,9 @@ import uuid
 
 class Scrapper :
     """
-    A class for web scraping.
-
-    Attributes:
-        site_url (str): The URL of the website to scrape.
-        output_type (str, optional): The type of output format. Default is 'markdown'.
-        save_file (bool, optional): Whether to save the scraped content to a file. Default is True.
-
-    Methods:
-        __init__: Initializes the Scrapper object and fetches the webpage content.
+    A class for web scraping. 
     """
-    def __init__(self, site_url: str, output_type: str = 'markdown', save_file : bool = True) -> None: 
+    def __init__(self, site_url: str, output_type: str = 'markdown', save_file: bool = True, include_nav: bool = False) -> None: 
         """
         Initializes a Scrapper object.
 
@@ -29,6 +21,7 @@ class Scrapper :
         self.site_url = site_url 
         self.output_type = output_type 
         self.save_file = save_file
+        self.include_nav = include_nav
         self.HEADERS = {
             'authority': 'scrapeme.live',
             'dnt': '1',
@@ -48,7 +41,13 @@ class Scrapper :
             self.site_page_htmlcontent, 'lxml'
         )
 
-    def generate_file_name(self) : 
+    def __generate_file_name(self) : 
+        """
+        Generate a unique file name using UUID (Universally Unique Identifier).
+
+        Returns:
+            str: A unique file name generated using UUID.
+        """
         return uuid.uuid4() 
 
     def create_markdown(self) -> str: 
@@ -93,11 +92,16 @@ class Scrapper :
                 extracted_table = pd.read_html(str(node))[0]
                 output += '\n'+extracted_table.to_markdown() +'\n'
                 flag = False 
+ 
             try :
                 to_insert = []
                 for child in node.children : 
                     if type(child) not in [NavigableString, Comment, ProcessingInstruction, Script, Stylesheet] and flag :
-                        to_insert.append(child)
+                        if child.name == 'nav' :
+                            if self.include_nav :
+                                to_insert.append(child)
+                        else :
+                            to_insert.append(child)
                 
                 to_insert = reversed(list(to_insert))
                 tree_stack.extend(to_insert)
@@ -106,7 +110,7 @@ class Scrapper :
             flag = True
 
         if self.save_file :
-            with open(str(self.generate_file_name())+'.md', 'w', encoding='utf-8') as file:
+            with open(str(self.__generate_file_name())+'.md', 'w', encoding='utf-8') as file:
                 file.write(output)
 
         return output
@@ -140,12 +144,16 @@ class Scrapper :
             flag = True
 
         if self.save_file :
-            with open(str(self.generate_file_name())+'.txt', 'w', encoding='utf-8') as file:
+            with open(str(self.__generate_file_name())+'.txt', 'w', encoding='utf-8') as file:
                 file.write(output)
 
         return output
+    
+    def __query(self, payload: dict, API_URL: str, headers: dict):
+        response = requests.post(API_URL, headers=headers, json=payload)
+        return response.json()
 
-    def chat(self, api_key: str, query: str = "Give me a brief summary of the following text") -> str: 
+    def chat(self, api_key: str, API_URL: str = "https://api-inference.huggingface.co/models/mistralai/Mistral-7B-Instruct-v0.2", query: str = "Give me a brief summary of the following text") -> str: 
         """
         Generates a response using the Hugging Face API based on a given query and text.
 
@@ -155,18 +163,13 @@ class Scrapper :
 
         Returns:
             str: The generated response.
-        """
-        API_URL = "https://api-inference.huggingface.co/models/mistralai/Mistral-7B-Instruct-v0.2"
+        """ 
         headers = {"Authorization": f"Bearer {api_key}"}
-
         text = self.create_markdown()
-
-        def query(payload):
-            response = requests.post(API_URL, headers=headers, json=payload)
-            return response.json()
             
-        output = query({
-            "inputs": f"{query} {text} ",
-        })
+        output = self.__query(
+            payload = {"inputs": f"{query} {text} "}, 
+            API_URL = API_URL, headers = headers
+        )
     
         return output[0]['generated_text']
